@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.bugs.ActionIssue</id>
+    <name>AnActionListener Bug</name>
+    <vendor email="amc9589@uncw.edu" url="https://www.uncw.edu">UNCW</vendor>
+
+    <description><![CDATA[
+    AnActionListener Bug Reproduction<br>
+    <em>Certain action events that occur from NavBarToolbar, ToolbarDecorator, and possibly other places invoke the AnActionListener twice.</em>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <applicationListeners>
+        <listener class="listeners.ActionListener" topic="com.intellij.openapi.actionSystem.ex.AnActionListener" />
+    </applicationListeners>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+    <idea-version since-build="201.3803.32"/>
+</idea-plugin>
